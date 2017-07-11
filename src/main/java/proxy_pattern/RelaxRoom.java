@@ -3,9 +3,9 @@ package proxy_pattern;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RestRoom implements RestRoomState{
+public class RelaxRoom implements RelaxRoomState{
 	private List<Person> people = new ArrayList<Person>();
-	private int limitSpace = 15;
+	private int capacity = 15;
 	
 	public void enterRestRoom(Person p){
 		if(people.size() < 15){
@@ -18,16 +18,19 @@ public class RestRoom implements RestRoomState{
 	}
 
 	@Override
-	public boolean restRoomIsFull() {
-		if(people.size() >= 15){
+	public boolean relaxRoomIsFull() {
+		if(people.size() >= capacity){
 			return true;
 		}
 		return false;
 	}
 
 	@Override
-	public int restRoomMaxCapacity() {
+	public int relaxRoomMaxCapacity() {
 		return 15;
 	}
 	
+	public void cleanRoom(){
+		System.out.println("The room has been cleaned");
+	}
 }
