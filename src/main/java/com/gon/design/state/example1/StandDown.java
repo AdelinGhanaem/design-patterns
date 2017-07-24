@@ -31,4 +31,9 @@ public class StandDown implements PlayerState {
     public void throwBomb() {
 
     }
+
+	public void standUp() {
+		// TODO Auto-generated method stub
+		
+	}
 }
